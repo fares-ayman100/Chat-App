@@ -2,7 +2,8 @@ import 'package:chat_app/Auth/Login.dart';
 import 'package:chat_app/Widgets/customButton.dart';
 import 'package:chat_app/Widgets/customLogo.dart';
 import 'package:chat_app/Widgets/customTextFormField.dart';
-import 'package:chat_app/cubit/signup/signup_cubit.dart';
+import 'package:chat_app/bloc/auth_bloc/auth_bloc.dart';
+
 import 'package:chat_app/helper/showSnackBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +21,7 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<SignupCubit, SignupState>(listener: (context, state) {
+      body: BlocConsumer<AuthBloc, AuthState>(listener: (context, state) {
         if (state is SignupLoading) {
           Center(
             child: CircularProgressIndicator(),
@@ -103,8 +104,8 @@ class SignUp extends StatelessWidget {
                       ),
                       onpressed: () async {
                         if (formkey.currentState!.validate()) {
-                          BlocProvider.of<SignupCubit>(context).registerMethod(
-                              email: email.text, password: password.text);
+                          BlocProvider.of<AuthBloc>(context).add(SignUpEvent(
+                              email: email.text, password: password.text));
                         } else {}
                       },
                     ),

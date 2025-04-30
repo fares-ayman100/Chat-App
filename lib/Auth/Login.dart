@@ -3,8 +3,9 @@ import 'package:chat_app/Views/chat_page.dart';
 import 'package:chat_app/Widgets/customButton.dart';
 import 'package:chat_app/Widgets/customLogo.dart';
 import 'package:chat_app/Widgets/customTextFormField.dart';
+import 'package:chat_app/bloc/auth/auth_bloc.dart';
+
 import 'package:chat_app/cubit/chat/chat_cubit.dart';
-import 'package:chat_app/cubit/login/login_cubit.dart';
 import 'package:chat_app/helper/showSnackBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +23,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<LoginCubit, LoginState>(listener: (context, state) {
+      body: BlocConsumer<AuthBloc, AuthState>(listener: (context, state) {
         if (state is LoginLoading) {
           Center(
             child: CircularProgressIndicator(),
@@ -112,8 +113,8 @@ class LoginPage extends StatelessWidget {
                       onpressed: () async {
                         if (formkey.currentState!.validate()) {
                           BlocProvider.of<ChatCubit>(context).getMessage();
-                          BlocProvider.of<LoginCubit>(context).loginUser(
-                              email: email.text, password: password.text);
+                          BlocProvider.of<AuthBloc>(context).add(LoginEvent(
+                              email: email.text, password: password.text));
                         } else {}
                       },
                     ),
