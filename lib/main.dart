@@ -1,9 +1,8 @@
 import 'package:chat_app/Auth/signUp.dart';
 import 'package:chat_app/Auth/Login.dart';
 import 'package:chat_app/Views/chat_page.dart';
+import 'package:chat_app/cubit/auth_cubit/auth_cubit.dart';
 import 'package:chat_app/cubit/chat/chat_cubit.dart';
-import 'package:chat_app/cubit/login/login_cubit.dart';
-import 'package:chat_app/cubit/signup/signup_cubit.dart';
 import 'package:chat_app/firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -27,8 +26,7 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => LoginCubit()),
-        BlocProvider(create: (context) => SignupCubit()),
+        BlocProvider(create: (context) => AuthCubit()),
         BlocProvider(create: (context) => ChatCubit())
       ],
       child: MaterialApp(
