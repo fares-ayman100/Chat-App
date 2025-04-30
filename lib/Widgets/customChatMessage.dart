@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class Customchatmessage extends StatelessWidget {
   const Customchatmessage({super.key, required this.messageModel});
-  final MessageModel messageModel;
+  final Message messageModel;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class Customchatmessage extends StatelessWidget {
 
 class CustomchatmessageFromFriend extends StatelessWidget {
   const CustomchatmessageFromFriend({super.key, required this.messageModel});
-  final MessageModel messageModel;
+  final Message messageModel;
 
   @override
   Widget build(BuildContext context) {
