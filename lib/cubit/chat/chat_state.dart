@@ -1,5 +1,4 @@
 part of 'chat_cubit.dart';
-
 @immutable
 abstract class ChatState {}
 

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:chat_app/Const/const.dart';
+import 'package:chat_app/Constant/const.dart';
 import 'package:chat_app/Model/message_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';

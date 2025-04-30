@@ -1,4 +1,4 @@
-import 'package:chat_app/Const/const.dart';
+import 'package:chat_app/Constant/const.dart';
 
 class Message {
   final String message;

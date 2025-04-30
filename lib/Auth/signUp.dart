@@ -2,8 +2,7 @@ import 'package:chat_app/Auth/Login.dart';
 import 'package:chat_app/Widgets/customButton.dart';
 import 'package:chat_app/Widgets/customLogo.dart';
 import 'package:chat_app/Widgets/customTextFormField.dart';
-import 'package:chat_app/bloc/auth_bloc/auth_bloc.dart';
-
+import 'package:chat_app/bloc/auth/auth_bloc.dart';
 import 'package:chat_app/helper/showSnackBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

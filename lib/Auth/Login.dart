@@ -4,7 +4,6 @@ import 'package:chat_app/Widgets/customButton.dart';
 import 'package:chat_app/Widgets/customLogo.dart';
 import 'package:chat_app/Widgets/customTextFormField.dart';
 import 'package:chat_app/bloc/auth/auth_bloc.dart';
-
 import 'package:chat_app/cubit/chat/chat_cubit.dart';
 import 'package:chat_app/helper/showSnackBar.dart';
 import 'package:flutter/material.dart';

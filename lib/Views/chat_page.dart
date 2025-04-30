@@ -1,6 +1,5 @@
 import 'package:chat_app/Auth/Login.dart';
-import 'package:chat_app/Const/const.dart';
-import 'package:chat_app/Model/message_model.dart';
+import 'package:chat_app/Constant/const.dart';
 import 'package:chat_app/Widgets/customChatMessage.dart';
 import 'package:chat_app/cubit/chat/chat_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
